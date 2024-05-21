@@ -1,0 +1,108 @@
+package com.JQuery;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class Selectable {
+	
+	WebDriver driver;
+	String applicationUrlAddress = "https://jqueryui.com/selectable/";
+	@BeforeTest
+	public void setUp() {
+		
+		System.setProperty("webdriver.chrome.driver", "./ChromeDriver/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get(applicationUrlAddress);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+	}
+	
+	@Test(priority=2)
+	public void selectAll() {
+		
+		By frameProperty = By.cssSelector(".demo-frame");
+		WebElement frame=driver.findElement(frameProperty);
+		driver.switchTo().frame(frame);
+		
+		By blockProperty = By.cssSelector("#selectable");
+		//By blockProperty = By.id("selectable");
+		WebElement block=driver.findElement(blockProperty);
+		By selecteeProperty = By.tagName("li");
+		//By selecteeProperty = By.cssSelector("[class=\"ui-widget-content ui-selectee\"]");
+		WebElement selecteee=driver.findElement(selecteeProperty);
+		Actions action = new Actions(driver);
+		action.clickAndHold(selecteee).moveByOffset(20, 250).release().perform();
+		/*
+		List<WebElement> selecteee=block.findElements(selecteeProperty);
+		System.out.println(selecteee);
+		//selecteee.click();
+		for(int index=0;index<selecteee.size();index++) {
+			String selectee = selecteee.get(index).getText();
+			selecteee.get(index).click();
+			System.out.println(selectee);
+		}
+		*/
+		driver.navigate().refresh();
+	}
+	
+	@Test(priority=1)
+	public void selectable() {
+		
+		By frameProperty = By.cssSelector(".demo-frame");
+		WebElement frame=driver.findElement(frameProperty);
+		driver.switchTo().frame(frame);
+		
+		By blockProperty = By.cssSelector("#selectable");
+		//By blockProperty = By.id("selectable");
+		WebElement block=driver.findElement(blockProperty);
+		//By selecteeProperty = By.tagName("li");
+		By selecteeProperty = By.cssSelector("[class=\"ui-widget-content ui-selectee\"]");
+		List<WebElement> selecteee=block.findElements(selecteeProperty);
+		System.out.println(selecteee);
+		//selecteee.click();
+		for(int index=0;index<selecteee.size();index++) {
+			String selectee = selecteee.get(index).getText();
+			selecteee.get(index).click();
+			System.out.println(selectee);
+			
+		}
+		driver.navigate().refresh();
+	}
+	
+	@Test(priority=3)
+	public void selectElements() {
+		
+		By frameProperty = By.cssSelector(".demo-frame");
+		WebElement frame=driver.findElement(frameProperty);
+		driver.switchTo().frame(frame);
+		
+		By blockProperty = By.cssSelector("#selectable");
+		//By blockProperty = By.id("selectable");
+		//WebElement block=driver.findElement(blockProperty);
+		By selecteeProperty = By.tagName("li");
+		//By selecteeProperty = By.cssSelector("[class=\"ui-widget-content ui-selectee\"]");
+		List<WebElement> selecteee=driver.findElements(selecteeProperty);
+		WebElement source=selecteee.get(0);
+		WebElement destination=selecteee.get(3);
+		
+		Actions action = new Actions(driver);
+		action.clickAndHold(source).moveToElement(destination).release().perform();
+		
+	}
+	
+	//@AfterTest
+	public void tearDown() {
+		
+		driver.quit();
+	}
+
+}

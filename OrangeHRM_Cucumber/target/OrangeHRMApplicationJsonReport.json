@@ -1,0 +1,73 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 4,
+            "name": "User Should Open Browser in the System",
+            "match": {},
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "Validating OrangeHRM Application LogIn Page",
+        "description": "",
+        "id": "orangehrm-application-functionalities-testing;validating-orangehrm-application-login-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9,
+            "name": "User enters OrangeHRM Application URL Address",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 10,
+            "name": "User should Be navigated to OrangeHRM Application LogIn WebPage",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 11,
+            "name": "User should close the orangeHRM Application along with the browser",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@Smoke"
+          }
+        ]
+      }
+    ],
+    "name": "OrangeHRM Application Functionalities Testing",
+    "description": "",
+    "id": "orangehrm-application-functionalities-testing",
+    "keyword": "Feature",
+    "uri": "Practice.feature"
+  }
+]

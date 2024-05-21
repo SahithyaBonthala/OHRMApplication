@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [com.OrangeHRMApplicationTestCases]">
+  <test thread-count="5" name="LogInTest(failed)">
+    <classes>
+      <class name="com.OrangeHRMApplicationTestCases.LogInTest">
+        <methods>
+          <include name="homePageTest"/>
+          <include name="logInPageTestAfterLogOut"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="logInPageTest"/>
+          <include name="logInTest"/>
+          <include name="logOutTest"/>
+        </methods>
+      </class> <!-- com.OrangeHRMApplicationTestCases.LogInTest -->
+    </classes>
+  </test> <!-- LogInTest(failed) -->
+  <test thread-count="5" name="AddEmployeeTest(failed)">
+    <classes>
+      <class name="com.OrangeHRMApplicationTestCases.AddEmployeeTest">
+        <methods>
+          <include name="pimPageTest"/>
+          <include name="logInTest"/>
+          <include name="logInPageTest"/>
+          <include name="logInPageTestAfterLogOut"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="homePageTest"/>
+          <include name="addEmployeeTest"/>
+          <include name="logOutTest"/>
+        </methods>
+      </class> <!-- com.OrangeHRMApplicationTestCases.AddEmployeeTest -->
+    </classes>
+  </test> <!-- AddEmployeeTest(failed) -->
+  <test thread-count="5" name="EmployeeList(failed)">
+    <classes>
+      <class name="com.OrangeHRMApplicationTestCases.EmployeeList">
+        <methods>
+          <include name="homePageTest"/>
+          <include name="logInPageTestAfterLogOut"/>
+          <include name="tearDown"/>
+          <include name="Print_EmployeeList"/>
+          <include name="setUp"/>
+          <include name="pimTest"/>
+          <include name="logInPageTest"/>
+          <include name="logInTest"/>
+          <include name="logOutTest"/>
+        </methods>
+      </class> <!-- com.OrangeHRMApplicationTestCases.EmployeeList -->
+    </classes>
+  </test> <!-- EmployeeList(failed) -->
+</suite> <!-- Failed suite [com.OrangeHRMApplicationTestCases] -->

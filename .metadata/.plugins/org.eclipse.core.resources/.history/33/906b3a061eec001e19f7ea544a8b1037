@@ -1,0 +1,34 @@
+package com.JQuery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+public class Selectable {
+	
+	WebDriver driver;
+	String applicationUrlAddress = "https://jqueryui.com/selectable/";
+	@BeforeTest
+	public void setUp() {
+		
+		System.setProperty("webdriver.chrome.driver", "./ChromeDriver/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get(applicationUrlAddress);
+		driver.manage().window().maximize();
+	}
+	
+	public void selectable() {
+		
+		By frameProperty = By.className("demo-frame");
+		WebElement frame=driver.findElement(frameProperty);
+		driver.switchTo().frame(frame);
+		
+		By selecteeProperty = By.className("ui-widget-content ui-selectee");
+		WebElement selectee=driver.findElement(selecteeProperty);
+		System.out.println(selectee);
+		selectee.click();
+	}
+
+}
